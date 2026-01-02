@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Point | Asymptotic Optimization Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div id="app">
+        <header>
+            <div class="logo">
+                <span class="accent">ZENITH</span> POINT
+            </div>
+            <div class="top-stats">
+                <div class="stat-item">
+                    <span class="label">FLUX</span>
+                    <span id="flux-count" class="value">0.000</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">RATE</span>
+                    <span id="flux-rate" class="value">0.000 /s</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">COHERENCE</span>
+                    <span id="coherence-level" class="value">1.000</span>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <button class="nav-btn active" data-tab="generator">GENERATOR</button>
+            <button class="nav-btn" data-tab="upgrades">UPGRADES</button>
+            <button class="nav-btn" data-tab="reboot">REBOOT</button>
+            <button class="nav-btn" data-tab="zenith">ZENITH</button>
+        </nav>
+
+        <main id="main-content">
+            <!-- Generator Tab -->
+            <section id="generator" class="tab-content active">
+                <div class="generator-container">
+                    <div class="visualizer">
+                        <div id="core-orb" class="orb"></div>
+                        <div class="pulse-ring"></div>
+                    </div>
+                    <button id="collect-btn" class="primary-btn">INITIALIZE FLUX CAPTURE</button>
+                    <p class="hint">Manual resonance adds +1.0 Flux per click.</p>
+                </div>
+            </section>
+
+            <!-- Upgrades Tab -->
+            <section id="upgrades" class="tab-content">
+                <div class="upgrade-grid" id="upgrade-list">
+                    <!-- Upgrades will be injected here -->
+                </div>
+            </section>
+
+            <!-- Reboot Tab -->
+            <section id="reboot" class="tab-content">
+                <div class="reboot-container">
+                    <h2>System Reboot</h2>
+                    <p class="description">Recycle current Flux to stabilize Dimensional Coherence. This will reset all current Flux and Upgrades but permanently multiply Flux efficiency.</p>
+                    
+                    <div class="reboot-stats">
+                        <div class="reboot-stat">
+                            <span class="label">Current Coherence</span>
+                            <span id="current-coherence" class="value">1.000</span>
+                        </div>
+                        <div class="reboot-stat">
+                            <span class="label">Projected Coherence</span>
+                            <span id="next-coherence" class="value">1.005</span>
+                        </div>
+                    </div>
+
+                    <div id="reboot-warning" class="warning hidden">
+                        Flux saturation insufficient for Coherence shift.
+                    </div>
+                    <button id="reboot-btn" class="prestige-btn disabled">EXECUTE REBOOT</button>
+                    <p id="reboot-requirement" class="requirement">Requires 1.000e12 Flux</p>
+                </div>
+            </section>
+
+            <!-- Zenith Tab -->
+            <section id="zenith" class="tab-content">
+                <div class="zenith-container">
+                    <h2>The Zenith Point</h2>
+                    <p class="description">Reach absolute stability to complete the sequence.</p>
+                    
+                    <div class="zenith-progress-container">
+                        <div class="progress-info">
+                            <span>Convergence Progress</span>
+                            <span id="zenith-percent">0.0000000%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div id="zenith-bar" class="progress-bar-fill"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span>Current: <span id="zenith-current">0</span></span>
+                            <span>Target: <span id="zenith-target">1.00e15</span></span>
+                        </div>
+                    </div>
+
+                    <div class="zenith-status">
+                        <p id="zenith-status-text">Status: Analyzing dimensional variables...</p>
+                        <p class="small">"Optimization is a journey, not a destination."</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div id="notification-bar" class="notification">System operational. Initialize Flux capture.</div>
+        </footer>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
